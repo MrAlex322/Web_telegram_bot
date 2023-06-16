@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <style>
-    @import url("href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap");
+
+        :root {
+            --tg-theme-text-color: black;
+            --tg-theme-bg-color: white;
+            --tg-theme-button-color: white;
+            --tg-theme-button-text-color: blue;
+            --tg-theme-secondary-bg-color: lightgray;
+        }
 
         * {
             margin: 0;
@@ -26,7 +34,7 @@
         }
 
         h1 {
-            margin-top:50;
+            margin-top: 50px;
             margin-bottom: 10px;
         }
 
@@ -89,15 +97,16 @@
         <input type="text" placeholder="Телефон" id="user_phone">
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script >
+    <script>
         let tg = window.Telegram.WebApp;
-        let buy = document.getElemetById("buy")
-        let order = document.getElemetById("order")
+        let buy = document.getElementById("buy");
+        let form = document.getElementById("form");
+        let userName = document.getElementById("user_name");
 
         buy.addEventListener("click", () => {
-            document.getElementsById("main").style.display = "none";
-            document.getElementsById("form").style.display = "block";
-            document.getElementsById("user_name").value = tg.initDataUnsafe.first_name + " " + tg.initDataUnsafe.last_name;
+            document.getElementById("main").style.display = "none";
+            form.style.display = "block";
+            userName.value = tg.initDataUnsafe.first_name + " " + tg.initDataUnsafe.last_name;
         });
     </script>
 </body>
