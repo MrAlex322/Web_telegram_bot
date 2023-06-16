@@ -106,7 +106,11 @@
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             form.style.display = "block";
-            userName.value = tg.initDataUnsafe.first_name + " " + tg.initDataUnsafe.last_name;
+            userName.value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+        });
+
+        order.addEventListener("click", () => {
+            tg.close();
         });
     </script>
 </body>
